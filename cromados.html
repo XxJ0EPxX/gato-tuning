@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Cromados</title>
+    <link rel="shortcut icon" href="./iconos/icono del gato.png">
+    <link rel="stylesheet" href="styles-shop.css">
+</head>
+<body>
+    <header class="Header">
+        <nav class="Header_menu">
+            <a class="Header_menu_link" href="index.html">Home</a>
+            <a class="Header_menu_link" href="store.html">Tienda</a>
+        </nav>
+        <div class="container-icon">
+            <div class="container-cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+            </div>
+
+            <div class="container-cart-products hidden-cart">
+                <div class="row-product hidden">
+                    <div class="cart-product">
+                        <div class="info-cart-product">
+                            <span class="cantidad-producto-carrito">1</span>
+                            <p class="titulo-producto-carrito">Tengo Novia Toxica</p>
+                            <span class="precio-producto-carrito">$80</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="cart-total hidden">
+					<h3>Total:</h3>
+					<span class="total-pagar">S/. 200</span>
+					<button onclick="enviar();" id="send-to-whatsapp" class="btn-send-whatsapp">Enviar a WhatsApp</button>
+				</div>
+                <p class="cart-empty">El carrito está vacío</p>
+            </div>
+        </div>
+    </header>
+    <div class="container-items">
+        <div class="item">
+            <figure>
+                <a>
+                    <img src="./produtos/16.0.png" alt="producto" />
+                </a>
+            </figure>
+            <div class="info-product">
+                <h2>Chanchito</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.1.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Autobots</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.2.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Decepticons</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.3.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Apple</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.4.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Marihuana</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.5.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Cojo Rico</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.6.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Alien</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.7.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Bab Bunny</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.8.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Fuck You</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.9.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Conejo Malo</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.10.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Monitos</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.11.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Fantasmita</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.12.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Yo hago lo que me da la gana</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img
+                    src="./produtos/16.13.png"
+                    alt="producto"
+                />
+            </figure>
+            <div class="info-product">
+                <h2>Audi Logo</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

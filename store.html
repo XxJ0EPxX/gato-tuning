@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gato Tunning</title>
+    <link rel="shortcut icon" href="./iconos/icono del gato.png">
+    <link rel="stylesheet" href="styles-shop.css">
+</head>
+<body>
+    <header class="Header">
+        <nav class="Header_menu">
+            <a class="Header_menu_link" href="index.html">HOME</a>
+            <a class="Header_menu_link" href="store.html">TIENDA</a>
+        </nav>
+        <img class="icono-gato" src="./iconos/icono del gato.png" alt="Icono del gato">
+        </nav>
+        <div class="header-search">
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Buscar productos...">
+                <button type="submit" id="search-button">Buscar</button>
+            </form>
+        </div>
+        <div class="container-icon">
+            <div class="container-cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+            </div>
+            <div class="container-cart-products hidden-cart">
+                <div class="row-product hidden">
+                    <div class="cart-product">
+                        <div class="info-cart-product">
+                            <span class="cantidad-producto-carrito">1</span>
+                            <p class="titulo-producto-carrito">Tengo Novia Toxica</p>
+                            <span class="precio-producto-carrito">$80</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="cart-total hidden">
+                    <h3>Total:</h3>
+                    <span class="total-pagar">S/. 200</span>
+                    <button onclick="enviar();" id="send-to-whatsapp" class="btn-send-whatsapp">Enviar a WhatsApp</button>
+                </div>
+                <p class="cart-empty">El carrito está vacío</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-items">
+        <div class="item">
+            <figure>
+                <img src="./produtos/2.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Fiel a Todas</h2>
+                <p class="price">S/.10</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/3.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Línea Móvil</h2>
+                <p class="price">S/.8</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/4.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Tengo Esposa Toxica</h2>
+                <p class="price">S/.10</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/5.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>#Te Toco Atras</h2>
+                <p class="price">S/.8</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/6.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>#Te Toco Atras</h2>
+                <p class="price">S/.8</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/7.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Perro Que Ladra</h2>
+                <p class="price">S/.10</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/8.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Manda Ubi Paso por Tí</h2>
+                <p class="price">S/.10</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/9.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Yo Amo a mi Toxica</h2>
+                <p class="price">S/.10</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/10.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Todas Tienen Remplazo</h2>
+                <p class="price">S/.10</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/11.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Tengo Novio Toxico</h2>
+                <p class="price">S/.10</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/13.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Todas Mienten Menos Mi Mamá</h2>
+                <p class="price">S/.10</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/14.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Todas Tienen Remplazo Menos Yo</h2>
+                <p class="price">S/.10</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/17.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Rolling Stones</h2>
+                <p class="price">S/.8</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/18.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Así soy y qué</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/19.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>No subo brujas</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="./produtos/22.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>GLP</h2>
+                <p class="price">S/.3</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+		<div class="item">
+            <figure>
+                <img src="./produtos/20.0.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Bebé abordo</h2>
+                <p class="price">S/.3</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="./produtos/1.0.png" alt="producto">
+                    <img src="./produtos/1.1.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Tengo Novia Toxica</h2>
+                <a href="galeria1.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="./produtos/12.0.png" alt="producto">
+                    <img src="./produtos/12.1.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Aquí Estuvieras Pero la Cagaste</h2>
+                <a href="galeria2.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+					<img src="./produtos/16.0.png" alt="producto">
+                    <img src="./produtos/16.1.png" alt="producto">
+                    <img src="./produtos/16.2.png" alt="producto">
+                    <img src="./produtos/16.3.png" alt="producto">
+					<img src="./produtos/16.4.png" alt="producto">
+					<img src="./produtos/16.5.png" alt="producto">
+					<img src="./produtos/16.6.png" alt="producto">
+					<img src="./produtos/16.7.png" alt="producto">
+					<img src="./produtos/16.8.png" alt="producto">
+					<img src="./produtos/16.9.png" alt="producto">
+					<img src="./produtos/16.10.png" alt="producto">
+					<img src="./produtos/16.11.png" alt="producto">
+					<img src="./produtos/16.12.png" alt="producto">
+					<img src="./produtos/16.13.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Stickers Cromados</h2>
+                <a href="cromados.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+					<img src="./produtos/15.0.png" alt="producto">
+                    <img src="./produtos/15.1.png" alt="producto">
+                    <img src="./produtos/15.2.png" alt="producto">
+                    <img src="./produtos/15.3.png" alt="producto">
+					<img src="./produtos/15.4.png" alt="producto">
+					<img src="./produtos/15.5.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Insignias</h2>
+                <a href="insignia.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+					<img src="./produtos/21.0.png" alt="producto">
+                    <img src="./produtos/21.1.png" alt="producto">
+                    <img src="./produtos/21.2.png" alt="producto">
+                    <img src="./produtos/21.3.png" alt="producto">
+					<img src="./produtos/21.4.png" alt="producto">
+					<img src="./produtos/21.5.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Marcas</h2>
+                <a href="marcas.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+
+		<div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="./produtos/23.0.png" alt="producto">
+                    <img src="./produtos/23.1.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Metodo de Pago</h2>
+                <a href="metpag.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+
+		<div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="./produtos/24.0.png" alt="producto">
+                    <img src="./produtos/24.1.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Iniciales Paises</h2>
+                <a href="inipai.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+
+		<div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="./produtos/25.0.png" alt="producto">
+                    <img src="./produtos/25.1.png" alt="producto">
+					<img src="./produtos/25.2.png" alt="producto">
+					<img src="./produtos/25.3.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Manitos de Paises</h2>
+                <a href="manitos.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+
+		<div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="./produtos/27.0.png" alt="producto">
+                    <img src="./produtos/27.1.png" alt="producto">
+					<img src="./produtos/27.2.png" alt="producto">
+					<img src="./produtos/27.3.png" alt="producto">
+					<img src="./produtos/27.4.png" alt="producto">
+                    <img src="./produtos/27.5.png" alt="producto">
+					<img src="./produtos/27.6.png" alt="producto">
+					<img src="./produtos/27.7.png" alt="producto">
+					<img src="./produtos/27.8.png" alt="producto">
+                    <img src="./produtos/27.9.png" alt="producto">
+					<img src="./produtos/27.10.png" alt="producto">
+					<img src="./produtos/27.11.png" alt="producto">
+					<img src="./produtos/27.12.png" alt="producto">
+                    <img src="./produtos/27.13.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Etiquetas</h2>
+                <a href="etiquetas.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+
+		<div class="item">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="./produtos/28.0.png" alt="producto">
+                    <img src="./produtos/28.1.png" alt="producto">
+					<img src="./produtos/28.2.png" alt="producto">
+                </div>
+                <button class="carousel-prev">‹</button>
+                <button class="carousel-next">›</button>
+            </div>
+            <div class="info-product">
+                <h2>Sets</h2>
+                <a href="sets.html" class="btn-view-gallery">Ver galería</a>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
