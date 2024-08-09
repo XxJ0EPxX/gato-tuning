@@ -33,6 +33,8 @@ body {
     background-attachment: fixed; /* Para que la imagen permanezca fija */
     color: #333;
     display: flex;
+    font-size: 16px;
+    line-height: 1.6;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100px;
@@ -51,13 +53,13 @@ header {
 
 .Header_menu {
     display: flex;
-    justify-content: center; /* Centramos los enlaces */
-    flex-grow: 1;
-    margin-left: 80px; /* Separamos los enlaces del ícono del gato */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
 }
 
 .Header_menu_link {
-    margin: 0 20px; /* Ajusta el espacio entre los enlaces */
     background: linear-gradient(to right, #ec681c, #f4991a 50%, #ffcc07);
     border-radius: 16px;
     color: white; /* Color del texto de los enlaces */
@@ -74,11 +76,14 @@ header {
     left: 10px; /* Ajusta la posición para que se ajuste a tu diseño */
     width: 50px; /* Ajusta el tamaño */
     height: auto;
+
 }
 
 /* Centering the navigation links */
+/* Centering the navigation links */
 .Header_menu {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     flex-grow: 1;
 }
@@ -117,10 +122,19 @@ header {
     font-size: 12px;
 }
 
+.header-search {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
 .icon-cart {
     width: 40px;
     height: 40px;
     stroke: #000;
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
 }
 
 .icon-cart:hover {
@@ -291,8 +305,9 @@ header {
 }
 
 .cart-empty {
-    padding: 20px;
+    padding: 10%; /* Usa un padding en porcentaje para que se ajuste dinámicamente */
     text-align: center;
+    font-size: 1.2rem; /* Asegura que el texto sea legible en diferentes tamaños de pantalla */
 }
 
 .hidden {
@@ -317,12 +332,7 @@ header {
     background-color: #333;
 }
 
-.header-search {
-    margin: 0 auto;
-    max-width: 600px;
-    padding: 10px;
-    text-align: center;
-}
+
 
 #search-form {
     display: flex;
@@ -415,319 +425,132 @@ header {
     right: 10px;
 }
 
-@media (max-width: 768px) {
-    /* Ajusta los tamaños de fuente para dispositivos móviles */
+/* Media Queries para diferentes tamaños de pantalla */
+
+/* Dispositivos pequeños (hasta 480px) */
+@media only screen and (max-width: 480px) {
+    .Header_menu {
+        flex-direction: column;
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        gap: 10px;
+    }
+
     .Header_menu_link {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-
-    .icono-gato {
-        width: 40px;
-    }
-
-    .container-cart-products {
-        width: 90%;
-    }
-
-    .titulo-producto-carrito,
-    .precio-producto-carrito,
-    .cantidad-producto-carrito {
+        align-self: flex-end; /* Mueve los botones hacia la derecha */
+        margin: 5px 0;
         font-size: 16px;
     }
 
-    .cart-total h3,
-    .total-pagar {
-        font-size: 18px;
+    .search-bar {
+        order: 2;
+        align-self: flex-end; /* Mueve la barra de búsqueda hacia la derecha */
+        margin-bottom: 5px; /* Reduce el espacio entre la barra de búsqueda y el carrito */
+        margin-top: 1px; /* Ajusta el espacio arriba de la barra de búsqueda si es necesario */
+        width: 70%; /* Ajusta el ancho de la barra de búsqueda si es necesario */
+    }
+
+    .cart-icon {
+        order: 2;
+        width: 30px;
+        height: 30px;
+        align-self: flex-end; /* Asegura que el carrito también esté alineado a la derecha */
     }
 
     .container-items {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .info-product {
+        padding: 10px;
+        gap: 5px;
     }
 
     .item img {
         height: 200px;
     }
 
-    .header-search {
-        max-width: 100%;
-    }
-
-    #search-input {
-        width: 100px; /* Ancho reducido para móviles */
-    }
-
-    /* Estilos para el carrusel */
-    .carousel {
-        position: relative;
-        width: 100%;
-        max-width: 600px; /* Ajusta según sea necesario */
-        overflow: hidden;
-    }
-
-    .carousel-images {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: 100%; /* Ocupa todo el ancho disponible */
-    }
-
-    .carousel-images img {
-        width: 100%; /* Asegura que cada imagen ocupe todo el ancho del carrusel */
-        height: auto; /* Mantiene las proporciones de la imagen */
-    }
-
     .carousel-prev, .carousel-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    .carousel-prev {
-        left: 10px;
-    }
-
-    .carousel-next {
-        right: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Estilos generales */
-    body {
-        font-size: 14px; /* Ajusta el tamaño de la fuente para móviles */
-    }
-
-    /* Container items: visualización de productos en una columna */
-    .container-items {
-        grid-template-columns: 1fr; /* Solo una columna en pantallas pequeñas */
-    }
-
-    /* Header */
-    header {
-        align-items: flex-start;
-        padding: 10px 45px;
-    }
-
-    .Header_menu {
-        margin-left: 0; /* Ajuste de margen en móvil */
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .Header_menu_link {
-        margin: 5px 0; /* Espaciado vertical entre enlaces */
-        padding: 8px 15px;
-        font-size: 18px; /* Ajusta el tamaño de la fuente */
-    }
-
-    /* Search bar */
-    .header-search {
-        padding: 10px 5px;
-        width: 100%; /* Ocupa todo el ancho disponible */
-    }
-
-    #search-input {
-        width: 100%; /* Ocupa todo el ancho disponible */
-        margin-bottom: 10px; /* Añade margen para separación en dispositivos móviles */
-    }
-
-    #search-button {
-        width: 100%; /* Ocupa todo el ancho disponible */
-    }
-
-    /* Carrito de compras */
-    .container-cart-products {
-        width: 100%;
-        max-height: 200px; /* Limita la altura del carrito en móviles */
-    }
-
-    .cart-product {
-        padding: 20px; /* Ajusta el padding en móvil */
-    }
-
-    .titulo-producto-carrito, .precio-producto-carrito, .cantidad-producto-carrito {
-        font-size: 16px; /* Ajusta el tamaño de la fuente en móvil */
-    }
-
-    /* Estilos del carrusel */
-    .carousel {
-        max-width: 100%; /* Asegura que el carrusel ocupe todo el ancho del dispositivo */
-    }
-
-    .carousel-images img {
-        width: 100%; /* Asegura que cada imagen ocupe todo el ancho del carrusel */
-    }
-
-    /* Ajustes en botones de acción */
-    .btn-send-whatsapp, .btn-view-gallery {
-        font-size: 14px; /* Ajusta el tamaño del texto en botones */
-        padding: 8px 10px; /* Ajusta el padding en móvil */
-    }
-
-    /* Opciones de color */
-    .color-options {
-        gap: 5px; /* Reduce el espacio entre opciones de color */
-    }
-
-    .color-option {
-        width: 25px; /* Reduce el tamaño de las opciones de color */
-        height: 25px;
-    }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-    /* Estilos generales */
-    body {
-        font-size: 16px; /* Ajusta el tamaño de la fuente para tablets */
-    }
-
-    /* Container items: visualización de productos en dos columnas */
-    .container-items {
-        grid-template-columns: 1fr 1fr; /* Dos columnas en tablets */
-    }
-
-    /* Header */
-    header {
-        padding: 15px 20px;
-    }
-
-    .Header_menu_link {
-        margin: 10px 15px; /* Ajuste de margen en tablets */
-        padding: 10px 20px;
-        font-size: 20px;
-    }
-
-    /* Search bar */
-    .header-search {
-        padding: 10px;
-        width: 100%;
-    }
-
-    #search-input {
-        width: 75%; /* Ocupa el 75% del ancho disponible */
-    }
-
-    #search-button {
-        width: 25%; /* Ocupa el 25% del ancho disponible */
-    }
-
-    /* Carrito de compras */
-    .container-cart-products {
-        width: 100%;
-        max-height: 250px; /* Limita la altura del carrito en tablets */
-    }
-
-    .cart-product {
-        padding: 25px; /* Ajusta el padding en tablets */
-    }
-
-    .titulo-producto-carrito, .precio-producto-carrito, .cantidad-producto-carrito {
-        font-size: 18px; /* Ajusta el tamaño de la fuente en tablets */
-    }
-
-    /* Estilos del carrusel */
-    .carousel {
-        max-width: 100%; /* Asegura que el carrusel ocupe todo el ancho del dispositivo */
-    }
-
-    .carousel-images img {
-        width: 100%;
-    }
-
-    /* Ajustes en botones de acción */
-    .btn-send-whatsapp, .btn-view-gallery {
-        font-size: 16px; /* Ajusta el tamaño del texto en botones */
-        padding: 10px 15px;
-    }
-
-    /* Opciones de color */
-    .color-options {
-        gap: 10px;
-    }
-
-    .color-option {
-        width: 30px; /* Ajuste de tamaño de las opciones de color */
-        height: 30px;
-    }
-}
-
-@media (min-width: 769px) {
-    /* Estilos generales */
-    body {
-        font-size: 18px; /* Ajusta el tamaño de la fuente para escritorio */
-    }
-
-    /* Container items: visualización de productos en tres columnas */
-    .container-items {
-        grid-template-columns: repeat(3, 1fr); /* Tres columnas en escritorio */
-    }
-
-    /* Header */
-    header {
-        padding: 20px 30px;
-    }
-
-    .Header_menu_link {
-        margin: 10px 20px;
-        padding: 15px 30px;
-        font-size: 22px;
-    }
-
-    /* Search bar */
-    .header-search {
-        padding: 15px;
-        width: 100%;
-    }
-
-    #search-input {
-        width: 300px;
-    }
-
-    #search-button {
-        width: 150px;
-    }
-
-    /* Carrito de compras */
-    .container-cart-products {
-        width: 400px;
-        max-height: 300px;
-    }
-
-    .cart-product {
-        padding: 30px;
-    }
-
-    .titulo-producto-carrito, .precio-producto-carrito, .cantidad-producto-carrito {
-        font-size: 20px;
-    }
-
-    /* Estilos del carrusel */
-    .carousel {
-        max-width: 600px; /* Asegura que el carrusel ocupe el ancho deseado en escritorio */
-    }
-
-    .carousel-images img {
-        width: 100%;
-    }
-
-    /* Ajustes en botones de acción */
-    .btn-send-whatsapp, .btn-view-gallery {
+        top: 90%;
+        padding: 5px;
         font-size: 18px;
-        padding: 15px 20px;
     }
+}
 
-    /* Opciones de color */
-    .color-options {
+
+
+/* Dispositivos medianos (481px a 768px) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .Header_menu {
         gap: 15px;
     }
 
-    .color-option {
-        width: 35px;
-        height: 35px;
+    .container-items {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas medianas */
+    }
+
+    .info-product {
+        padding: 15px;
+    }
+
+    .item img {
+        height: 250px;
+    }
+
+    #search-input {
+        width: 200px;
+    }
+
+    .container-cart-products {
+        width: 350px;
+    }
+}
+
+/* Dispositivos grandes (769px a 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .Header_menu_link {
+        font-size: 18px;
+    }
+
+    .container-items {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas para pantallas grandes */
+    }
+
+    .info-product {
+        padding: 20px;
+    }
+
+    .item img {
+        height: 280px;
+    }
+
+    .container-cart-products {
+        width: 370px;
+    }
+
+    .carousel-prev, .carousel-next {
+        top: 50%;
+    }
+}
+
+/* Dispositivos extra grandes (más de 1024px) */
+@media only screen and (min-width: 1025px) {
+    .Header_menu_link {
+        font-size: 20px;
+    }
+
+    .container-items {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas para pantallas extra grandes */
+    }
+
+    .info-product {
+        padding: 25px;
+    }
+
+    .item img {
+        height: 300px;
+    }
+
+    .container-cart-products {
+        width: 400px;
     }
 }
