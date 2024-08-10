@@ -469,8 +469,18 @@ header {
         height: 200px;
     }
 
+    .carousel-images {
+        transform: translateX(0); /* Asegura que las imágenes no se desplacen fuera de vista */
+        flex: 0 0 100%; /* Asegura que solo una imagen se muestre a la vez */
+    }
+
+    .carousel-images img {
+        min-width: 100%; /* Asegura que cada imagen ocupe todo el ancho del carrusel */
+        flex: 0 0 100%; /* Evita que más de una imagen se muestre a la vez */
+    }
+
     .carousel-prev, .carousel-next {
-        top: 90%;
+        top: 50%;
         padding: 5px;
         font-size: 18px;
     }
