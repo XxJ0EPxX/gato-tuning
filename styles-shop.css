@@ -386,8 +386,6 @@ header {
     opacity: 0.8;
 }
 
-
-
 /*carrousel estilos*/
 .carousel {
     position: relative;
@@ -399,11 +397,13 @@ header {
 .carousel-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho */
 }
 
 .carousel-images img {
-    width: 100%;
+    width: 100%; /* Asegúrate de que las imágenes ocupen todo el ancho del contenedor */
     height: auto;
+    flex-shrink: 0; /* Evita que las imágenes se reduzcan */
 }
 
 .carousel-prev, .carousel-next {
@@ -415,6 +415,7 @@ header {
     border: none;
     padding: 10px;
     cursor: pointer;
+    z-index: 10;
 }
 
 .carousel-prev {
@@ -424,8 +425,6 @@ header {
 .carousel-next {
     right: 10px;
 }
-
-/* Media Queries para diferentes tamaños de pantalla */
 
 /* Dispositivos pequeños (hasta 480px) */
 @media only screen and (max-width: 480px) {

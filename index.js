@@ -167,11 +167,22 @@ const sendToWhatsApp = document.querySelector('#send-to-whatsapp');
 sendToWhatsApp.addEventListener('click', () => {
     let message = 'Hola, quiero hacer un pedido:\n\n';
     allProducts.forEach(product => {
-        message += `Producto: ${product.title}\nColor: ${product.color}\nCantidad: ${product.quantity}\nPrecio: ${product.price}\n\n`;
+        message += `Producto: ${product.title}\nColor: ${product.color}\nCantidad: ${product.quantity}\nPrecio: S/.${product.price}\n\n`;
     });
 
-    const total = valorTotal.innerText;
-    message += `Total a pagar: ${total}`;
+    // Obtener y procesar el total
+    let total = valorTotal.innerText.replace('S/.', '').replace(',', ''); // Asegúrate de eliminar el símbolo y las comas
+    total = parseFloat(total); // Convierte a número
+
+    if (isNaN(total)) {
+        alert('Error al calcular el total.');
+        return;
+    }
+
+    const discount = 0.20; // 20% de descuento
+    const discountedTotal = total * (1 - discount); // Calcula el total con descuento
+
+    message += `Total a pagar (con 20% de descuento aplicado): S/.${discountedTotal.toFixed(2)}`;
 
     const whatsappURL = `https://api.whatsapp.com/send?phone=51925855117&text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
