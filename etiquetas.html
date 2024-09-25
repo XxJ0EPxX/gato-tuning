@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Etiquetas</title>
+    <link rel="shortcut icon" href="https://i.postimg.cc/SRgbkKZF/icono-del-gato.png">
+    <link rel="stylesheet" href="CSS/styles-shop.css">
+</head>
+<body>
+    <header class="Header">
+        <nav class="Header_menu">
+            <a class="Header_menu_link" href="index.html">HOME</a>
+            <a class="Header_menu_link" href="store.html">TIENDA</a>
+        </nav>
+        <img class="icono-gato" src="https://i.postimg.cc/SRgbkKZF/icono-del-gato.png" alt="Icono del gato">
+        </nav>
+        <div class="header-search">
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Buscar productos...">
+                <button type="submit" id="search-button">Buscar</button>
+            </form>
+        </div>
+        <div class="container-icon">
+            <div class="container-cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+                <div class="count-products">
+                    <span id="contador-productos">0</span>
+                </div>
+            </div>
+            <div class="container-cart-products hidden-cart">
+                <div class="row-product hidden">
+                    <div class="cart-product">
+                        <div class="info-cart-product">
+                            <span class="cantidad-producto-carrito">1</span>
+                            <p class="titulo-producto-carrito">Tengo Novia Toxica</p>
+                            <span class="precio-producto-carrito">$80</span>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="cart-total hidden">
+                    <h3>Total:</h3>
+                    <span class="total-pagar">S/. 200</span>
+                    <button onclick="enviar();" id="send-to-whatsapp" class="btn-send-whatsapp">Enviar a WhatsApp</button>
+                </div>
+                <p class="cart-empty">El carrito está vacío</p>
+            </div>
+        </div>
+    </header>
+    <div class="container-items">
+        <div class="item">
+            <figure>
+                <a>
+                    <img src="https://i.postimg.cc/7Z4ffJ6S/27-0.png" alt="producto">
+                </a>
+            </figure>
+            <div class="info-product">
+                <h2>Motul Cromado</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/Jh40Qwjn/27-1.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Rip Curl</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/3wSRSLZZ/27-2.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Perfomance</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/mDPr0QXW/27-3.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Kamikaze</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/nzNLZCgj/27-4.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Element</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/90TQfcHx/27-5.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Volcom</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+        
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/05JQn0Kp/27-6.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Beach Club</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/TPw2DVX5/27-7.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Ecko</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/Lsb9BJHC/27-8.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Gato Tunning</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/cHtsDdCs/27-9.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Liqui Moly Etiqueta</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/XqMnmtB9/27-10.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Team Pisco</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/3Ng3T92V/27-11.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Seven Eleven</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/7P7H0Pj9/27-12.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Liqui Moly</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+        <div class="item">
+            <figure>
+                <img src="https://i.postimg.cc/dtYqBPYY/27-13.png" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2>Motul</h2>
+                <p class="price">S/.5</p>
+                <button class="btn-add-cart">Añadir al carrito</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
